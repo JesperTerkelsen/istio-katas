@@ -7,8 +7,7 @@ metadata:
     app.kubernetes.io/part-of: sentences
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    istio: ingress
   servers:
   - port:
       number: 443

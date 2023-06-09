@@ -672,8 +672,7 @@ metadata:
   namespace: istio-ingress
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    istio: ingress
   servers:
   - port:
       number: 443
@@ -775,8 +774,7 @@ metadata:
   namespace: istio-ingress                              # <----- Must be in the istio-ingress namespace
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    istio: ingress
   servers:
   - port:                                               # <----- Add the port block with the port and protocol
       number: 443

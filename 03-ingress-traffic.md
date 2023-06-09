@@ -62,8 +62,7 @@ metadata:
   name: myapp-gateway
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    istio: ingress
   servers:
   - port:
       number: 80
@@ -198,8 +197,7 @@ metadata:
   name: sentences
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    istio: ingress
   servers:
   - port:
       number: 80
