@@ -1,10 +1,10 @@
-#! /bin/bash
+#! /bin/bash -x
 
 set -e
 
 INGRESSGATEWAY_NS="istio-ingress"
 PREFIX=${TRAINING_NAME:-"istio"}
-NAMESPACE=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+NAMESPACE=default
 CA="eficode.academy"
 
 touch ~/.rnd

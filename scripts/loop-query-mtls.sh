@@ -5,7 +5,7 @@ set -e
 ARG_PROTO=${1:-"http"}
 ARG_PATH=${2:-""}
 PREFIX=${TRAINING_NAME:-istio}
-NAMESPACE=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+NAMESPACE=default
 CA="eficode.academy"
 HOST="$NAMESPACE.sentences.$PREFIX.eficode.academy"
 INGRESS_GW_LABEL="app=istio-ingressgateway"
