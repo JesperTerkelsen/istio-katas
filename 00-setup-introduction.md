@@ -110,13 +110,6 @@ command.
 echo $STUDENT_NS
 ```
 
-Execute the following command and make sure it matches the value of the
-environment variable `STUDENT_NS`.
-
-```console
-kubectl config view --output 'jsonpath={..namespace}'; echo
-```
-
 #### Task: Deploy the sentences application
 
 ___
