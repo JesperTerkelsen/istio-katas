@@ -236,16 +236,16 @@ service/sentences   NodePort    172.20.106.197   <none>        5000:32092/TCP   
 Run the following command to observe that an envoy proxy container has been injected into the application.
 
 ```console
-kubectl get pods -o=custom-columns=NAME:.metadata.name,CONTAINERS:.spec.containers[*].name
+kubectl get pods -o=custom-columns=NAME:.metadata.name,CONTAINERS:.spec.containers[*].name,INITCONTAINERS:.spec.initContainers[*].name
 ```
 
 This should show an istio proxy sidecar for each service.
 
 ```
-NAME                            CONTAINERS
-age-v1-676bf56bdd-m6bcj         age,istio-proxy
-name-v1-587b56cdf4-6tnhs        name,istio-proxy
-sentences-v1-6ccc9fdcc5-fzt2g   sentences,istio-proxy
+NAME                            CONTAINERS   INITCONTAINERS
+age-v1-6bcd598594-7555t         age          istio-init,istio-proxy
+name-v1-6cc84d596-bqwwz         name         istio-init,istio-proxy
+sentences-v1-76cbf4f647-drln9   sentences    istio-init,istio-proxy
 ```
 
 #### Task: Run the loop-query.sh script
