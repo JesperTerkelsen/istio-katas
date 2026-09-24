@@ -28,7 +28,8 @@ fi
 
 URL_PATH="/$ARG_PATH"
 URL="$PROTO://$HOST:$PORT$URL_PATH"
-CURL_OPTS="--resolve $HOST:$PORT $CURL_OPTS"
+IP="$(dig +short $HOST)"
+CURL_OPTS="--resolve $HOST:$PORT:$IP $CURL_OPTS"
 echo "-------------------------------------"
 echo "Using ingress gateway with label: $INGRESS_GW_LABEL"
 echo "Using URL: $URL"
